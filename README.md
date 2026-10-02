@@ -8,10 +8,6 @@ A professional standalone desktop application built with **Electron + React**.
 
 ## 🔐 Default Login Credentials
 
-| Field    | Value      |
-|----------|------------|
-| Username | `maklada`  |
-| Password | `pfe2025`  |
 
 To change credentials, edit `src/authConfig.js`.
 
