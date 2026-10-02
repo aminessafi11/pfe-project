@@ -9,9 +9,7 @@ A professional standalone desktop application built with **Electron + React**.
 ## 🔐 Default Login Credentials
 
 
-To change credentials, edit `src/authConfig.js`.
-
----
+--
 
 ## 🚀 Quick Start (Development)
 
