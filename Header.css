@@ -1,0 +1,331 @@
+.header {
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(255, 255, 255, 0.70);
+  border-bottom: 1px solid var(--glass-border-dim);
+  box-shadow: 0 1px 0 rgba(200, 220, 240, 0.5), var(--shadow-sm);
+  position: relative;
+  z-index: 5;
+}
+
+/* ── Left ─────────────────────────────────────────────────────────────────── */
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+.header__page-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ice-navy);
+  letter-spacing: 0.02em;
+  margin: 0;
+  animation: slideInLeft var(--t-mid) var(--ease) both;
+}
+
+/* ── Right ────────────────────────────────────────────────────────────────── */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header__divider {
+  width: 1px;
+  height: 18px;
+  background: var(--ice-steel);
+  margin: 0 4px;
+}
+
+/* ── Language button ──────────────────────────────────────────────────────── */
+.header__lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--ice-steel);
+  border-radius: 20px;
+  color: var(--ice-deep);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: all var(--t-fast) var(--ease);
+  box-shadow: var(--shadow-sm);
+}
+
+.header__lang-btn:hover {
+  background: var(--ice-white);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--shadow-md), 0 0 0 3px var(--accent-glow-soft);
+}
+
+/* ── Change Password button ───────────────────────────────────────────────── */
+.header__change-pass-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  color: var(--ice-slate);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 500;
+  transition: all var(--t-fast) var(--ease);
+  white-space: nowrap;
+}
+
+.header__change-pass-btn:hover {
+  background: rgba(62, 135, 199, 0.06);
+  border-color: rgba(62, 135, 199, 0.2);
+  color: var(--accent);
+}
+
+/* ── Logout button ────────────────────────────────────────────────────────── */
+.header__logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  color: var(--ice-slate);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 500;
+  transition: all var(--t-fast) var(--ease);
+  white-space: nowrap;
+  max-width: 240px;
+  overflow: hidden;
+}
+
+.header__logout-btn:hover {
+  background: rgba(200, 50, 50, 0.06);
+  border-color: rgba(200, 50, 50, 0.18);
+  color: #B03030;
+}
+
+.header__logout-btn--confirm {
+  background: rgba(200, 50, 50, 0.08);
+  border-color: rgba(200, 50, 50, 0.25);
+  color: #B03030;
+  animation: confirmPulse 0.3s var(--ease-spring) both;
+}
+
+@keyframes confirmPulse {
+  from { transform: scale(0.97); }
+  to   { transform: scale(1); }
+}
+
+/* ── Modal Overlay ────────────────────────────────────────────────────────── */
+.header__modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 30, 60, 0.25);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn var(--t-fast) var(--ease) both;
+}
+
+/* ── Modal ────────────────────────────────────────────────────────────────── */
+.header__modal {
+  width: 100%;
+  max-width: 420px;
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  animation: slideUp var(--t-mid) var(--ease-spring) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Modal Header ─────────────────────────────────────────────────────────── */
+.header__modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--glass-border-dim);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.header__modal-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ice-navy);
+  margin-bottom: 2px;
+}
+
+.header__modal-sub {
+  font-size: 11.5px;
+  color: var(--ice-slate);
+  font-weight: 300;
+}
+
+.header__modal-close {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--ice-slate);
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--t-fast) var(--ease);
+}
+
+.header__modal-close:hover {
+  background: rgba(200, 50, 50, 0.08);
+  color: #B03030;
+}
+
+/* ── Modal Form ───────────────────────────────────────────────────────────── */
+.header__modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 24px 24px;
+}
+
+.header__modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.header__modal-label {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--ice-slate);
+  letter-spacing: 0.03em;
+}
+
+.header__modal-input {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--ice-steel);
+  background: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ice-navy);
+  outline: none;
+  transition: border-color var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease);
+}
+
+.header__modal-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* ── Modal Message ────────────────────────────────────────────────────────── */
+.header__modal-message {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-family: var(--font-display);
+}
+
+.header__modal-message--success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #065f46;
+}
+
+.header__modal-message--error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #991b1b;
+}
+
+/* ── Modal Button ─────────────────────────────────────────────────────────── */
+.header__modal-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(62,135,199,0.35);
+  transition: all var(--t-fast) var(--ease);
+}
+
+.header__modal-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(62,135,199,0.42);
+}
+
+.header__modal-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ── User Badge ───────────────────────────────────────────────────────────── */
+.header__user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(62, 135, 199, 0.35);
+  flex-shrink: 0;
+}
+
+.header__user-name {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ice-navy);
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+}
+
+/* ── Page Title ───────────────────────────────────────────────────────────── */
+.header__title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a2e45;
+  letter-spacing: 0.01em;
+  flex: 1;
+}

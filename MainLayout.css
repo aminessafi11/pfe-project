@@ -1,0 +1,29 @@
+.main-layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--ice-mist);
+}
+
+.main-layout__body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.main-layout__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.main-layout__page {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn var(--t-mid) var(--ease) both;
+}

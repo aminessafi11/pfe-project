@@ -1,0 +1,62 @@
+.titlebar {
+  height: var(--titlebar-h);
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid var(--glass-border-dim);
+  display: flex;
+  align-items: center;
+  -webkit-app-region: drag;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 200;
+  box-shadow: 0 1px 0 rgba(200, 220, 240, 0.6);
+}
+
+.titlebar__drag {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  height: 100%;
+}
+
+.titlebar__name {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--ice-slate);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+/* Controls must NOT be draggable */
+.titlebar__controls {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  -webkit-app-region: no-drag;
+}
+
+.titlebar__btn {
+  width: 46px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--ice-slate);
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease),
+              color var(--t-fast) var(--ease);
+}
+
+.titlebar__btn:hover {
+  background: rgba(62, 135, 199, 0.08);
+  color: var(--ice-deep);
+}
+
+.titlebar__btn--close:hover {
+  background: rgba(200, 50, 50, 0.1);
+  color: #B03030;
+}
